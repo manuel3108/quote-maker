@@ -1,19 +1,20 @@
 <script lang="ts">
 	import type { Group } from '$lib/scripts/Group';
 	import { onMount } from 'svelte';
-	import { jsPDF } from 'jspdf/dist/jspdf.node';
+	import { jsPDF } from 'jspdf';
 	import type { Task } from '$lib/scripts/Task';
 	import autoTable from 'jspdf-autotable';
 	export let groups: Array<Group> = [];
 
 	let iframeElement;
 
+	let mounted = false;
 	onMount(() => {
-		regeneratePdf(groups);
+		mounted = true;
 	});
 
 	$: {
-		if (iframeElement) {
+		if (iframeElement && mounted) {
 			regeneratePdf(groups);
 		}
 	}
