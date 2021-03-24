@@ -32,7 +32,7 @@ jobs:
               with:
                   # Build directory to deploy
                   build_dir: build/
-                  jekyll: false
+                  keep_history: true
                   fqdn: quote-maker.serret.dev
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
