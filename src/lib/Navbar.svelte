@@ -5,3 +5,9 @@
         </a>
     </div>
 </nav>
+
+<style>
+    .navbar {
+        border-radius: 0;
+    }
+</style>
