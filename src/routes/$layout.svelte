@@ -1,5 +1,8 @@
 <script>
-    import "../global.scss";
+    import Navbar from '$lib/Navbar.svelte';
+
+    import '../global.scss';
 </script>
 
+<Navbar />
 <slot />
